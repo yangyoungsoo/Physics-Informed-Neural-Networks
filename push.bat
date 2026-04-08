@@ -14,6 +14,7 @@ set MSG=%YYYY%/%MM%/%DD%/%HH%/%MIN%/%SEC%
 
 git add .
 git commit -m "%MSG%"
+git pull --rebase origin main
 git push origin main
 
 echo.
