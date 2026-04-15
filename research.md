@@ -31,7 +31,7 @@ MLP 기반의 Physics-Informed Neural Network(PINNs) 구현.
 | 기능 | 설명 |
 |------|------|
 | Residual Connection | 같은 크기 레이어 간 잔차 연결 |
-| Skip Connection | 입력층 → 중간층으로 직접 연결 |
+| Skip Connection | 인코딩된 입력을 `skip_proj`로 hidden dim에 투영 후, 2번째 hidden layer부터 이전 출력과 concat하여 입력. 즉 idx≥1인 레이어의 입력 차원 = `prev_hidden_dim + hidden_dim` |
 | NTK Parameterization (init) | 초기화 시 weight를 `1/sqrt(fan_in)`으로 스케일링 |
 | NTK Adaptive Loss Weighting | 학습 중 각 loss term의 gradient norm을 주기적으로 계산해 `w_bc`, `w_ic`를 자동 조정 (Wang et al. 2022). `ntk_adaptive=True`, `ntk_update_every=N`으로 제어 |
 

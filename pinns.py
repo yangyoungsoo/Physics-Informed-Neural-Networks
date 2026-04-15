@@ -158,13 +158,13 @@ class PINN(nn.Module):
         self.linears = nn.ModuleList()
 
         in_dim = first_dim
-        for out_dim in layers[1:-1]:
-            if skip and in_dim != first_dim:
-                # hidden layers receive concatenation of previous output + skip
-                linear_in = out_dim + hidden_dim  # prev hidden + skip projected
+        for idx, out_dim in enumerate(layers[1:-1]):
+            if skip and idx > 0:
+                # hidden layers (idx>=1) receive concatenation of previous output + skip
+                linear_in = in_dim + hidden_dim
             else:
                 linear_in = in_dim
-            self.linears.append(nn.Linear(linear_in if (skip and in_dim != first_dim) else in_dim, out_dim))
+            self.linears.append(nn.Linear(linear_in, out_dim))
             in_dim = out_dim
 
         self.output_layer = nn.Linear(layers[-2], layers[-1])
