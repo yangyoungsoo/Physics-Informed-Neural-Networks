@@ -1,4 +1,4 @@
-# PINNs — Physics-Informed Neural Networks
+# Physics-Informed Neural Networks
 
 A modular, PyTorch-based implementation of Physics-Informed Neural Networks (PINNs) with flexible architecture options and built-in training utilities.
 
