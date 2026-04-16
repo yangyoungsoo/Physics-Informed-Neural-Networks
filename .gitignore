@@ -3,3 +3,5 @@ __pycache__/
 !checkpoints/*.pt
 *.pyc
 .ipynb_checkpoints/
+push.bat
+pull.bat
