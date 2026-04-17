@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import json; nb=json.load\\(open\\('C:/Users/teamlee4/Desktop/PINNs/burgers_1d.ipynb'\\)\\); cells=nb['cells']; print\\(f'nbformat: {nb[\\\\\"nbformat\\\\\"]}, cells: {len\\(cells\\)}'\\); print\\(json.dumps\\(cells[0], indent=2\\)[:500]\\)\")",
+      "Bash(python -c ':*)",
+      "Bash(python generate_notebooks.py)"
+    ]
+  }
+}
